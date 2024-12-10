@@ -1,4 +1,49 @@
-from node import Node
+
+```python
+class Node:
+    """Classe que representa um nó de uma árvore binária."""
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+        self.father = None
+        self.isLeft = False
+
+```
+
+---
+---
+# <center>**Inserir nó à esquerda (setLeft)**
+
+
+O método setLeft da classe Node é responsável por adicionar um novo nó como filho à esquerda do nó atual. Aqui está uma explicação detalhada do método:
+
+```python
+def setLeft(self, data):
+    """Adiciona um nó à esquerda do nó atual."""
+    self.left = Node(data)
+    self.left.isLeft = True
+    self.left.father = self
+```
+
+- **`def setLeft(self, data):`**: Define o método setLeft, que aceita um parâmetro data.
+- **`self.left = Node(data)`**: Cria um novo nó com o valor data e o define como o filho à esquerda do nó atual (self).
+- **`self.left.isLeft = True`**: Define o atributo isLeft do novo nó como `True`, indicando que este nó é um filho à esquerda.
+- **`self.left.father = self`**: Define o atributo father do novo nó como o nó atual (self), estabelecendo a relação pai-filho.
+
+Este método permite adicionar um novo nó à esquerda do nó atual, configurando corretamente as referências de pai e filho e indicando que o novo nó é um filho à esquerda.
+
+---
+---
+
+    def setRight(self, data):
+        """Adiciona um nó à direita do nó atual."""
+        self.right = Node(data)
+        self.right.isLeft = False
+        self.right.father = self
+
+
+
 
 class BinTree:
     """Classe que representa uma árvore binária."""
